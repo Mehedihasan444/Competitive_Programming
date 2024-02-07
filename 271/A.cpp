@@ -1,22 +1,30 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+
 int main()
 {
-    // int y;
-    // cin >> y;
-    // for (int i = y;; i++)
-    // {
-    int i = 1987;
-    int a = 0, b = 0, c = 0;
-    a = i % 10;
-    b = ((i / 10) - a) % 10;
-    c = ((i / 10) - b) % 10;
-    cout << a << " " << b << " " << c;
-    //     if (a != b && b != c)
-    //     {
-    //         /* code */
-    //     }
-    // }
+    int y;
+    cin >> y;
+
+   
+    while (true)
+    {
+     
+        y++;
+
+  
+        int a = y % 10;
+        int b = (y / 10) % 10;
+        int c = (y / 100) % 10;
+        int d = (y / 1000) % 10;
+
+    
+        if (a != b && a != c && a != d && b != c && b != d && c != d)
+        {
+            cout << y << endl;
+            break;
+        }
+    }
 
     return 0;
 }
