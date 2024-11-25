@@ -11,30 +11,22 @@ int main()
 
         cin >> a[i];
     }
-    int temp = a[0];
-    int target = 0;
-    sort(a, a + n);
-    for (int i = 0; i < n; i++)
+
+int lastMax=a[0];
+int lastMin=a[0];
+    for (int i = 1; i < n; i++)
     {
-        if (a[i] == temp)
+        if (a[i] < lastMin)
         {
-            target = i;
-        }
-    }
-    for (int i = 0; i < target; i++)
-    {
-        if (a[i] < a[i + 1])
-        {
+          lastMin=a[i];
             c++;
         }
-    }
-    for (int i = target ; i < n; i++)
-    {
-        if (a[i] > a[i-1])
-        {
-            c++;
+        else if(a[i] > lastMax){
+          lastMax=a[i];
+          c++;
         }
     }
+   
     cout << c << endl;
     return 0;
 }
